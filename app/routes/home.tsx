@@ -5,16 +5,7 @@ import Button from "../../components/ui/Button";
 import Upload from "../../components/ui/upload";
 import {useNavigate} from "react-router";
 import {useEffect, useRef, useState} from "react";
-import {createProject, getProjects} from "../../lib/puter.action.js";
-
-interface DesignItem {
-  id: string;
-  name: string;
-  sourceImage: string;
-  renderedImage: string | null | undefined;
-  timestamp: number;
-  visibility?: string;
-}
+import {createProject, getProjects} from "../../lib/puter.action";
 
 export function meta({}: Route.MetaArgs) {
   return [

@@ -65,6 +65,12 @@ const Upload = ({ onComplete }: UploadProps) => {
         reader.readAsDataURL(file);
     }, [isSignedIn, onComplete]);
 
+    const handleDragEnter = (e: React.DragEvent) => {
+        e.preventDefault();
+        if (!isSignedIn) return;
+        setIsDragging(true);
+    };
+
     const handleDragOver = (e: React.DragEvent) => {
         e.preventDefault();
         if (!isSignedIn) return;
@@ -102,6 +108,7 @@ const Upload = ({ onComplete }: UploadProps) => {
             {!file ? (
                 <div
                     className={`dropzone ${isDragging ? 'is-dragging' : ''}`}
+                    onDragEnter={handleDragEnter}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
