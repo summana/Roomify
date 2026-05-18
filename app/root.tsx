@@ -10,7 +10,6 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { useEffect, useState } from "react";
-import type { AuthState } from "../type.d.ts";
 import {
   getCurrentUser,
   signIn as puterSignIn,
